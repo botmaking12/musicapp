@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Music Player</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f0c29">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>🎧 Premium Music</h1>
+
+    <label class="btn">
+      📂 Select Songs
+      <input id="picker" type="file" accept="audio/*" multiple hidden />
+    </label>
+
+    <div id="list" class="list"></div>
+
+    <div class="player">
+      <div id="now" class="now">No song playing</div>
+      <audio id="audio" controls></audio>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+</body>
+</html>
